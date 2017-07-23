@@ -13,3 +13,4 @@ android:
   - android-22
   - extra-android-m2repository
   - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
+script: ant build
