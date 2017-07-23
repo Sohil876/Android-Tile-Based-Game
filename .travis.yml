@@ -13,3 +13,6 @@ android:
   - android-22
   - extra-android-m2repository
   - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
+script:
+  - sudo apt-get update
+  - sudo apt-get install ant
