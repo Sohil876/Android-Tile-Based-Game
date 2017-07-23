@@ -1,5 +1,5 @@
 language: android
-sudo: true
+sudo: false
 jdk: oraclejdk8
 env:
   global:
@@ -13,8 +13,3 @@ android:
   - android-22
   - extra-android-m2repository
   - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
-script:
-  - sudo apt-get -qq update
-  - sudo apt-get install ant
-  - echo $(ant -version)
-  - ant build
