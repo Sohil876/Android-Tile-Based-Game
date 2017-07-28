@@ -3,8 +3,8 @@ sudo: false
 jdk: oraclejdk8
 env:
   global:
-    - ANDROID_TARGET=android-22
-    - ANDROID_ABI=armeabi-v7a
+  - ANDROID_TARGET=android-22
+  - ANDROID_ABI=armeabi-v7a
 android:
   components:
   - tools
@@ -14,13 +14,14 @@ android:
   - extra-android-m2repository
   - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
 script:
-  - sudo apt-get update
-  - sudo apt-get install ant
+- sudo apt-get update
+- sudo apt-get install ant
 notifications:
   email: true
 deploy:
   provider: releases
-  api_key: "fd6617699ff7195095193053d6583d4824fc86a5"
+  api_key:
+    secure: "iTzpCGOprAEZYs8occqzWA9M6c/iOtzwNBhdstrDuCSNqC7170qejry2ZmESX+HNvY+umb7QdeVSNSapNgsfeWpQUKtNppPogu2GDEzthOIafQV5J/D8Y37xcxlSbaREeQrT5IdVGO3YM3RrWNsDd1vNpTHZrSpkG8jc0JUj67yUTnZv0BS0Q34S5sAn6kDPje0bX2oU4OwhOWPfgs7zNFclW3axPCVfIlHCvPgqFS6W9qwWBanV8l5EtMs3Vo7JIqJCcWdHsShzaR+UDeD5B0OOTNgqpU+YVbHp7EJ35Cs2OF5rtMZ+q45M+E6+prLjtGstJhdG5BPM6knpsdESo808LpaXQfijqdfzWxPAuQYpxGf/VBYl4lAS6HdayMDAnzcutsUoiVBWKVXATgpaCvhLtPCMmoN7U29q9LDH6xNgoLXvQxxG52V8JGA2xwPNu7vIoJhP+CbNFfUtnp/ajqJ+ex3q031M3fbb+5ykAsTHyn+4vCkZJJpMhJfKN5kLGIKX2QCRK+a9/2kyPmDUE0rVv2TF2zpZjYvURQ1RC+8Rul2lQWoPbTeHKUeLcAxMv2YLeiMtvTTFuRcSfGika2bM98KypklHNeocmszwuUpTxFOxWjRlEzYIdxN9PTxU2AnbGpQPoPGrsazdNOs7XhBCLMojF//ikHLZsAmEI38="
   file: app/build/outputs/apk/app-release.apk
   skip_cleanup: true
   on:
