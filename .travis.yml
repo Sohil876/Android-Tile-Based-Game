@@ -16,3 +16,13 @@ android:
 script:
   - sudo apt-get update
   - sudo apt-get install ant
+notifications:
+  email: true
+deploy:
+  provider: releases
+  api_key: "fd6617699ff7195095193053d6583d4824fc86a5"
+  file: app/build/outputs/apk/app-release.apk
+  skip_cleanup: true
+  on:
+    repo: Sohil876/Android-Tile-Based-Game
+    tags: true
